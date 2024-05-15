@@ -6,7 +6,7 @@ Write a JavaScript function that takes a comma-separated numbers as input and re
 If any non-numeric characters are present (except commas), treat those values as zero.
 If the input string is empty, return zero.*/
 
-let numbers = "";
+let numbers = "n,5,6,9,h,t";
 
 function sum(numbers) {
     let sum = 0;
@@ -18,6 +18,8 @@ function sum(numbers) {
             let num = parseFloat(newNumbers[i]);
             if (!isNaN(num)) {
                 sum += num;
+            } else {
+                sum += 0
             }
 
         }
