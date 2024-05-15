@@ -24,21 +24,7 @@ Cheat Mode:
 Design a "cheat mode" feature that alters the computer's choice in some way (optional).
 Come up with one specific implementation of cheat mode (e.g., computer always chooses scissors).*/
 
-// const rock_clicked = () => console.log("rock clicked")
 
-
-// const paper_clicked = () => console.log("paper clicked")
-// const scissors_clicked = () => console.log("scissors clicked")
-
-
-// const btn_rock = document.getElementById("rock")
-// const btn_paper = document.getElementById("paper")
-// const btn_scissors = document.getElementById("scissors")
-
-
-// btn_rock.addEventListener('click', rock_clicked)
-// btn_rock.addEventListener('click', paper_clicked)
-// btn_rock.addEventListener('click', scissors_clicked)
 
 let userMoveUpdated
 let computerMoveUpdated
@@ -68,7 +54,7 @@ function user(userMove) {
     // console.log("here")
     // return userMove
     // computer()
-    checkWinner()
+    // checkWinner()
 }
 
 
@@ -94,7 +80,7 @@ function computer() {
         console.log("Invalid")
         user()
     }
-    return computerMove
+    checkWinner()
 
 
 }
@@ -103,12 +89,9 @@ user()
 function checkWinner() {
     if (userMoveUpdated === computerMoveUpdated) {
         console.log("Tie")
-    } else if (userMoveUpdated === 1 && computerMoveUpdated == 3) {
+    } else if ((userMoveUpdated === 1 && computerMoveUpdated == 3) || (userMoveUpdated === 3 && computerMoveUpdated === 2) || (userMoveUpdated === 2 && computerMoveUpdated === 1)) {
         console.log("user won")
-    } else if (userMoveUpdated === 3 && computerMoveUpdated === 2) {
-        console.log("user won")
-    } else if (computerMoveUpdated === 1 && userMoveUpdated === 3) {
-        console.log("computer won")
+
     } else {
         console.log("computer won")
     }
